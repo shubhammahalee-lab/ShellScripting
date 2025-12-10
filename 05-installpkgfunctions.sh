@@ -14,9 +14,6 @@ validate(){
         echo "$pkg is install sucesss"
     fi
 
-
-
-
 }
 
 if [ "$usr_check" -ne 0 ]
