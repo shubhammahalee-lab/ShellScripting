@@ -1,37 +1,34 @@
-#!/bin/bash
+#! /bin/bash
 
-user_check=$(id -u)
-var1="mysql"
-var2="git"
+usr_check=$(id -u)
 
 validate(){
-    if [ $1 -eq 0 ]
+
+    pkg=$1
+    status=$2
+    if [ $status -ne 0 ]
     then 
-        echo "$var1 is install sucess"
-    else
-        echo "$var2 is install sucess"
+        echo "$pkg is not install"
+        exit 1
+    else 
+        echo "$pkg is install sucesss"
     fi
+
+
+
+
 }
 
-if [ user_check -ne 0]
+if [ $usr_check -ne 0 ]
 then 
-    echo "you are not in root user"
+    echo "you are not in the root"
     exit 1
 else
-    echo "you are in the root"
+    echo "you are in the root "
 fi
 
 yum install git -y
-validate $?
-
-
-if [ user_check -ne 0]
-then 
-    echo "you are not in root user"
-    exit 1
-else
-    echo "you are in the root"
-fi
+validate "git" $?
 
 yum install mysql -y
-validate $?
+validate "mysql" $?
