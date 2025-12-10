@@ -33,6 +33,11 @@ validate "git" $?
 #yum install mysql -y
 #validate "mysql" $?
 
-yum install mysql-server -y
-validate "mysql-server" $?
+#yum install mysql-server -y
+#validate "mysql-server" $?
+
+#not execute because of amazon linux
+
+dnf install mariadb105-server -y
+validate "mariadb105-server" $?
 
