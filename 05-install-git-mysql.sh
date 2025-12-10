@@ -6,7 +6,7 @@ validate(){
 
     pkg=$1
     status=$2
-    if [ $status -ne 0 ]
+    if [ "$status" -ne 0 ]
     then 
         echo "$pkg is not install"
         exit 1
@@ -19,7 +19,7 @@ validate(){
 
 }
 
-if [ $usr_check -ne 0 ]
+if [ "$usr_check" -ne 0 ]
 then 
     echo "you are not in the root"
     exit 1
