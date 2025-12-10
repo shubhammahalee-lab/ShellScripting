@@ -1,5 +1,5 @@
 #! /bin/bash
-USERCKE=${id -u}
+USERCKE= ${id -u}
 if [ $USERCKE -eq 0 ]; then
     echo "You are root user"
 else
