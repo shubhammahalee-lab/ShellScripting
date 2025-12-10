@@ -30,5 +30,9 @@ fi
 yum install git -y
 validate "git" $?
 
-yum install mysql -y
-validate "mysql" $?
+#yum install mysql -y
+#validate "mysql" $?
+
+yum install mysql-server -y
+validate "mysql-server" $?
+
